@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Suit | Bluepanda</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <i class="fa-solid fa-skull danger"></i>
+    <h1 class="header">Game Suit Batu Gunting Kertas</h1>
+
+    <div class="box-skors">
+      <div class="skors-content">
+        <h5 class="skors">Won: <span id="skor-menang">0</span></h5>
+        <h5 class="skors">Draw: <span id="skor-seri">0</span></h5>
+        <h5 class="skors">Lost: <span id="skor-kalah">0</span></h5>
+      </div>
+    </div>
+
+    <div class="box-weapon">
+      <h2>Select your Weapon</h2>
+      <div class="weapon-content">
+        <div class="item" data-weapon="batu">
+          <img src="assets/batu.png" alt="Batu" />
+          <h5>Rock</h5>
+        </div>
+        <div class="item" data-weapon="kertas">
+          <img src="assets/kertas.png" alt="Kertas" />
+          <h5>Paper</h5>
+        </div>
+        <div class="item" data-weapon="gunting">
+          <img src="assets/gunting.png" alt="Gunting" />
+          <h5>Scissors</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="box-game">
+      <div class="text">
+        <h2 class="name">Player</h2>
+        <h4>VS</h4>
+        <h2 class="name">Computer</h2>
+      </div>
+
+      <div class="weapon">
+        <div class="image-animation fade-right">
+          <img
+            src="assets/batu.png"
+            alt=""
+            id="player"
+            class="animate-player"
+          />
+        </div>
+        <div class="image-animation fade-left">
+          <img
+            src="assets/batu.png"
+            alt=""
+            id="computer"
+            class="animate-computer"
+          />
+        </div>
+      </div>
+
+      <h5 id="hasil">You Lost</h5>
+      <div class="reset">
+        <i class="fa-solid fa-rotate button" title="Main lagi"> </i>
+        <h5>Try Again</h5>
+      </div>
+    </div>
+    
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

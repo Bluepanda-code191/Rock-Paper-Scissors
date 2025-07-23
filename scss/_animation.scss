@@ -1,0 +1,95 @@
+@mixin animation($x, $y) {
+  transform: translate($x, $y);
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.fade-up {
+  @include animation(0, 50px);
+}
+
+.fade-down {
+  @include animation(0, -50px);
+}
+
+.fade-left {
+  @include animation(50px, 0);
+}
+
+.fade-right {
+  @include animation(-50px, 0);
+}
+
+.fade-up.show,
+.fade-down.show,
+.fade-left.show,
+.fade-right.show {
+  opacity: 1;
+  transform: translate(0);
+}
+
+@keyframes playerAnimation {
+  0% {
+    transform: translateY(0) rotate(70deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(50deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(80deg);
+  }
+  75% {
+    transform: translateY(-10px) rotate(50deg);
+  }
+  100% {
+    transform: translateY(0) rotate(70deg);
+  }
+}
+
+@keyframes computerAnimation {
+  0% {
+    transform: scaleX(-1) translateY(0) rotate(70deg);
+  }
+  25% {
+    transform: scaleX(-1) translateY(-10px) rotate(50deg);
+  }
+  50% {
+    transform: scaleX(-1) translateY(0px) rotate(80deg);
+  }
+  75% {
+    transform: scaleX(-1) translateY(-10px) rotate(50deg);
+  }
+  100% {
+    transform: scaleX(-1) translateY(0) rotate(70deg);
+  }
+}
+
+@keyframes resetAnimation {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-player {
+  animation: playerAnimation 0.8s ease-in 1s;
+}
+
+.animate-computer {
+  animation: computerAnimation 0.8s ease-in 1s;
+}
+
+.resetAnimation {
+  animation: resetAnimation 1s ease 5s infinite;
+}
