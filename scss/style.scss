@@ -8,14 +8,18 @@
 
 body {
   background-color: #081b29;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   font-family: "Amatic SC", sans-serif;
   color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+body.active {
+  background-image: url(/assets/WhatsApp\ Image\ 2025-07-16\ at\ 15.18.17.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .header {
@@ -25,7 +29,7 @@ body {
 }
 
 .box-skors {
-  position: fixed;
+  position: absolute;
   width: 100%;
   bottom: 0;
   left: 0;
@@ -64,10 +68,13 @@ body {
     gap: 70px;
 
     .item {
+      background-color: transparent;
+      backdrop-filter: blur(20px);
       width: 18%;
       padding: 12px 22px;
       border-radius: 12px;
       border: 2px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 20px #081b29;
       transition: all 0.3s ease;
       cursor: pointer;
 
@@ -161,5 +168,148 @@ body {
   right: 30px;
   font-size: 25px;
   cursor: pointer;
+}
+
+body.active .danger {
+  color: #05111a;
+}
+
+body.active .reset i {
+  color: #05111a;
+}
+
+@media (max-width: 550px) {
+  .box-skors {
+    .skors-content {
+      font-size: 25px;
+    }
+  }
+  .header {
+    font-size: 30px;
+    text-shadow: 0 0 10px #05111a;
+  }
+
+  .box-skors {
+    color: #fff;
+  }
+  .box-weapon {
+    h2 {
+      font-size: 25px;
+      text-shadow: 0 0 10px #05111a;
+    }
+    .weapon-content {
+      gap: 40px;
+      .item {
+        width: 25%;
+        h5 {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .box-game {
+    .text {
+      .name {
+        font-size: 20px;
+      }
+
+      h4 {
+        font-size: 18px;
+        text-shadow: 0 0 10px #05111a;
+      }
+    }
+
+    .weapon {
+      gap: 80px;
+      img {
+        width: 80%;
+      }
+
+      h5 {
+        font-size: 20px;
+        text-shadow: 0 0 10px #05111a;
+      }
+    }
+
+    .reset {
+      h5 {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 415px) {
+  .box-skors {
+    .skors-content {
+      font-size: 22px;
+    }
+  }
+  .danger {
+    top: 10px;
+    right: 20px;
+    font-size: 18px;
+  }
+  .header {
+    font-size: 25px;
+    text-shadow: 0 0 10px #05111a;
+  }
+
+  .box-skors {
+    color: #fff;
+  }
+  .box-weapon {
+    h2 {
+      font-size: 22px;
+      text-shadow: 0 0 10px #05111a;
+    }
+    .weapon-content {
+      gap: 20px;
+      .item {
+        width: 25%;
+        h5 {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .box-game {
+    .text {
+      gap: 80px;
+      .name {
+        font-size: 20px;
+        text-shadow: 0 0 10px #05111a;
+      }
+
+      h4 {
+        font-size: 18px;
+        text-shadow: 0 0 10px #05111a;
+      }
+    }
+
+    .weapon {
+      img {
+        width: 80%;
+      }
+
+      h5 {
+        font-size: 20px;
+        text-shadow: 0 0 10px #05111a;
+      }
+    }
+
+    .reset {
+      top: 10px;
+      left: 20px;
+      i {
+        font-size: 18px;
+      }
+      h5 {
+        display: none;
+      }
+    }
+  }
 }
 @import "animation";

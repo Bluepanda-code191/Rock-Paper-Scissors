@@ -51,7 +51,7 @@ weaponBtn.forEach((btn) => {
       playerImg.src = `assets/${playerChoice}.png`;
       computerImg.src = `assets/${computerChoice}.png`;
 
-      resetBtn.classList.add("resetAnimation")
+      resetBtn.classList.add("resetAnimation");
 
       const result = getResult(playerChoice, computerChoice);
       if (result === "win") {
@@ -64,21 +64,16 @@ weaponBtn.forEach((btn) => {
         hasilText.textContent = "You Lost!";
         skorKalah++;
       }
-      
 
       updateSkor();
     }, 1900);
   });
 });
 
-  
-
 resetBtn.addEventListener("click", () => {
   gameBox.style.display = "none";
   weaponBox.style.display = "block";
 });
-
-
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -104,4 +99,11 @@ document.querySelectorAll(".fade-left").forEach((el) => {
 
 document.querySelectorAll(".fade-right").forEach((el) => {
   observer.observe(el);
+});
+
+const dangerBtn = document.querySelector(".danger");
+const body = document.querySelector("body");
+
+dangerBtn.addEventListener("click", () => {
+  body.classList.toggle("active");
 });
